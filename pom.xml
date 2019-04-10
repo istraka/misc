@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.redhat.xpaas.eap.deployments</groupId>
+		<artifactId>parent-eap</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>parent-eap</relativePath>
+	</parent>
+	<artifactId>ha-servlet-counter</artifactId>
+	<packaging>war</packaging>
+	<name>HA Servlet Counter</name>
+	<description>HA Servlet Counter</description>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${version.war.plugin}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>ROOT</warName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>openshift</id>
+		</profile>
+	</profiles>
+</project>
